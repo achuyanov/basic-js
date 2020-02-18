@@ -1,24 +1,40 @@
 const chainMaker = {
+  arr:[],
+
   getLength() {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+    return this.arr.length;
   },
+
   addLink(value) {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+    this.arr.push (`( ${value} )`);
+    //console.log(value);
+    return this;
   },
-  removeLink(position) {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+
+  removeLink(pos) {
+    if ( (typeof (pos) != 'number') || (pos-1 < 0) || (pos-1 >= this.getLength()) ) {
+      this.arr = [];
+      throw new Error();
+    }
+    this.arr.splice(pos - 1, 1);
+    return this;
   },
+
   reverseChain() {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+    this.arr.reverse();
+    return this;
   },
+
   finishChain() {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+    let ret = this.arr.join('~~');
+    this.arr = [];
+    return ret;
   }
 };
 
 module.exports = chainMaker;
+
+/*
+let a = chainMaker.addLink('GHI').addLink(null).reverseChain().addLink(333).reverseChain().reverseChain().addLink(0).reverseChain().reverseChain().addLink('GHI').finishChain();
+
+console.log(a);*/
