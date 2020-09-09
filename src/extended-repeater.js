@@ -1,3 +1,4 @@
+const CustomError = require("../extensions/custom-error");
 module.exports = function repeater(str, options) {
     let  addition =  (options.addition===undefined) ? '': String(options.addition);
     const [ initStr,

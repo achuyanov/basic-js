@@ -1,3 +1,4 @@
+const CustomError = require("../extensions/custom-error");
 const chainMaker = {
   arr:[],
 
@@ -30,6 +31,7 @@ const chainMaker = {
     this.arr = [];
     return ret;
   }
+
 };
 
 module.exports = chainMaker;

@@ -1,3 +1,4 @@
+const CustomError = require("../extensions/custom-error");
 class VigenereCipheringMachine {
 
     constructor(direct = true) {
